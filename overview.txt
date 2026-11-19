@@ -1,0 +1,97 @@
+Overview
+
+Santa's workshop has a calculator problem. Each toy-making station needs to produce a list of exact numbers, but its Elf Calculator can store only 48 values at a time. Every instruction adds, subtracts, multiplies, or exactly divides two stored values and replaces the value in one storage slot.
+
+Your task is to write the shortest programs you can for 1,000 puzzles.
+
+Start
+20 hours ago
+
+Close
+2 months to go
+Merger & Entry
+Description
+
+Santa and Rudolph solving arithmetic puzzles on a sunny summer day by the beach The workshop's calculator caught a Christmas chill,
+With giant target numbers left for elves to fill!
+They only have a tiny starting seed in hand,
+And four simple symbols at the sleigh's command.
+
+Add, subtract, divide, or multiply with care,
+Save each new result with clever steps to spare!
+From a humble three, watch the totals grow,
+Building every target in a tidy row.
+
+Every extra step slows the sleigh's ascent,
+So make each calculation short and well-spent.
+Keep your program brief, make your logic shine,
+And help Santa launch right on Christmas time!
+
+The Challenge
+
+The North Pole's toy-counting calculator is stuck in basic mode just as the holiday rush hits its peak! It can only perform one simple math operation at a time, and every extra step slows down the assembly line. In this competition, you’ll write programs that use basic arithmetic (+, -, ×, ÷) to generate specific large target numbers from small initial values using as few total instructions as possible.
+
+The Goal
+
+Your score is the total number of arithmetic steps your programs use across all puzzles—so every instruction you shave off moves you higher on the leaderboard. The teams that craft the shortest, most efficient solutions will win Rudolph's heart and claim a share of the prize pool.
+
+How far can you go with just four basic operations? Sharpen your algorithms, trim every extra step, and help keep Santa's workshop running on time!
+Evaluation
+Scoring
+
+Submissions are evaluated by replaying the arithmetic program for each of the 1,000 scored puzzles. Your score is the total number of instructions across all 1,000 programs. Lower is better. There is no public/private leaderboard split.
+
+Every instruction costs one, including instructions that use the same source twice, produce a value you have already calculated, or run after all targets have been covered. All instructions must be legal. There is no partial credit. Each program must follow the calculator rules on the Data page and produce every target at least once. If any program is invalid, the submission is rejected.
+Submission format
+
+Submit a UTF-8 CSV file with exactly two columns, id and program, in that order. Include every ID from scored_0001 through scored_1000 exactly once. Row order does not affect the score.
+
+Each program cell contains a JSON array of instructions. Each instruction is a four-element array:
+
+["+", 0, 1, 2]
+
+This example adds the values in registers 0 and 1 and writes the result to register 2.
+
+    The operator must be one of "+", "-", "*", or "/".
+    The next two elements are integer source register indices from 0 through 47. Both registers must contain defined values.
+    The final element is the integer destination register index, also from 0 through 47.
+    Both source values are read before the destination is overwritten. The destination may be the same register as either source, and both sources may be the same register.
+
+The following CSV shows a complete solution for the toy puzzle on the Data page. Its ID is illustrative and must not be included in a competition submission. Use sample_submission.csv for a complete submission with the actual scored IDs.
+
+id,program
+example_0001,"[[""/"",0,0,1],[""-"",0,1,2],[""+"",0,2,3],[""+"",0,3,4]]"
+
+Use a CSV writer to escape the quotation marks inside each JSON cell.
+Program limits
+Parameter 	Limit
+Registers per puzzle 	48, indexed from 0 through 47
+Instructions per program 	4,096
+UTF-8 bytes per program cell 	131,072 bytes (128 KiB)
+Value of any register 	A positive integer no greater than that puzzle's value_limit
+
+Every puzzle has a value_limit no greater than The sample submission uses at most 2,873 instructions for any puzzle.
+Timeline
+
+    November 18, 2026 - Start Date.
+
+    January 21, 2027 - Entry Deadline. You must accept the competition rules before this date in order to compete.
+
+    January 21, 2027 - Team Merger Deadline. This is the last day participants may join or merge teams.
+
+    January 28, 2027 - Final Submission Deadline.
+
+All deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted. The competition organizers reserve the right to update the contest timeline if they deem it necessary.
+Prizes
+
+    First Prize: $12,000
+    Second Prize: $10,000
+    Third Prize: $10,000
+    Fourth Prize: $8,000
+
+Rudolph Prize - $10,000: Awarded to the team holding 1st place on the leaderboard for the longest period of time between November 18, 2026 12:00 AM UTC and January 28, 2027 11:59 PM UTC. In the event the competition needs to be restarted, the Rudolph Prize dates shall be the new start and deadline of the competition.
+
+As a condition to being awarded a Prize, a Prize winner must provide a detailed write-up on their solution in the competition forums within 14 days of the conclusion of the competition.
+Citation
+
+Walter Reade and María Cruz. Santa 2026 - The Elf Calculator. https://www.kaggle.com/competitions/santa-2026, 2026. Kaggle.
