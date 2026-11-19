@@ -14,3 +14,5 @@ Submission via Kaggle CLI: kaggle competitions submit -c santa-2026 -f submissio
 
 
 
+My GitHub Page: [https://github.com/HamzaPecenek/Santa-2026---The-Elf-Calculator](https://github.com/HamzaPecenek/Santa-2026---The-Elf-Calculator)
+
